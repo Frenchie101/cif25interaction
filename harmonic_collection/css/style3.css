@@ -1,0 +1,87 @@
+body {
+    background-image: url('Images/Background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #a04d15; /* when image is warped */
+    display: flex;
+        justify-content: center; 
+        align-items: center;
+}
+.circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    mix-blend-mode: screen; /* for overlap color blending */
+    padding: 20px; 
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+    margin-left: -100px; /* overlaps with blue */
+}
+
+.green {
+    background-color: lime;
+    margin-left: -100px; /* overlaps with red */
+}
+
+.center-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #20550b;
+    font-size: 40px;
+    font-family: bitcount;
+    font-weight: 800;
+}
+
+ .colorblind-text {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;                 
+    padding: 40px;                   
+    box-sizing: border-box;         
+    
+    color: #20550b;
+    font-size: 38px;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: left;             
+    
+    z-index: 10;
+}
+
+.bitcount { /* from google fonts */
+  font-family: "Bitcount", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+@font-face { /* locally hosted, may be unnecessary since its also web-hosted */
+font-family: "bitcount"; 
+src: url("../fonts/Bitcount-VariableFont_CRSV_ELSH_ELXP_slnt_wght.woff") format("woff");
+ }

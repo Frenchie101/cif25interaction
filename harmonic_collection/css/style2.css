@@ -1,0 +1,72 @@
+@font-face { /* locally hosted, may be unnecessary since its also web-hosted */
+font-family: "bitcount"; 
+src: url("fonts/Bitcount-VariableFont_CRSV_ELSH_ELXP_slnt_wght.woff") format("woff");
+ }
+
+/* skeletal grid */
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | content | footer */
+  min-height: 100vh; /* full screen height */
+}
+
+/* Header grid */
+.site-header {
+  display: grid;
+  grid-template-columns: auto 1fr; /* logo | nav */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #000000;
+  font-family: bitcount;
+  color: #ff0000;
+  position: sticky; 
+        top: 0; /* Aligns the header to the very top of the viewport */
+        z-index: 1000; /* Ensures the header stays on top of other content */
+}
+
+/* Navigation */
+.nav {
+  display: flex;             
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+/* style for nav links */
+.nav a {
+    font-family: bitcount;
+    color: #ff0000;
+    text-decoration: none;
+}
+
+body {
+    background-color: #da421c;
+    font-family: helvetica;
+    margin: -8px;
+}
+h1{
+    text-align: center;
+    color: #2f6718;
+    font-size: 120px;
+    font-family: Times New Roman;
+    font-style: italic;
+}
+
+.logo a {
+    font-family: bitcount;
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.site-footer {
+  text-align: center;
+  background: #000000;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-family: bitcount;
+  color: #ff0000;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+
+}
