@@ -1,0 +1,168 @@
+.bitcount { /* from google fonts */
+  font-family: "bitcount", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+@font-face { /* locally hosted, may be unnecessary since its also web-hosted */
+font-family: "bitcount"; 
+src: url("../fonts/Bitcount-VariableFont_CRSV_ELSH_ELXP_slnt_wght.woff") format("woff");
+ }
+ 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "bitcount", system-ui;
+  background: #000;
+  color: #ff0000;
+  line-height: 1.5;
+}
+
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #000;
+  font-size: 2rem;
+  color: #ff0000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+a.logo {
+  color: #ff0000;
+  text-decoration: none;
+  font-family: bitcount;
+}
+a.logo:hover { 
+  color: green;
+ }
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+.nav a {
+  color: #ff0000;
+  text-decoration: none;
+  transition: font-size 0.5s;
+}
+
+.nav a:hover {
+  color: green;
+  font-size: 10rem;
+}
+
+.content {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; 
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  letter-spacing: 6px;
+  color: green; 
+  text-align: center;
+}
+
+.artist-statement {
+  font-size: 2rem;
+  margin: 2rem 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.artist-statement:hover {
+  transform: translateY(-5px);
+  color: green; 
+}
+
+.artist-statement::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  color: green;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  max-width: 300px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.artist-statement:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+.highlight { color: #ff1900; font-size: 2.5rem; letter-spacing: 3px; }
+.italic { font-style: italic; color: #ff0000; }
+.bold { font-weight: 500; color: #ff0000; }
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+.site-footer {
+  text-align: center;
+  background: #000000;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-family: bitcount;
+  color: #ff0000;
+  position: sticky;
+        bottom: 0; /* Aligns the footer to the very bottom */
+}
+
+@media (max-width: 900px) {
+  .site-header { grid-template-columns: 1fr; text-align: center; }
+  .nav { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  h1 { font-size: 2rem; }
+  .artist-statement { font-size: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+  .site-header { padding: 1rem; }
+  .logo { font-size: 1.8rem; }
+  .nav a { font-size: 0.9rem; }
+  h1 { font-size: 1.4rem; }
+  .artist-statement { font-size: 1.2rem; }
+  .site-footer { font-size: 0.8rem; padding: 0.5rem; }
+}

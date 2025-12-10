@@ -1,0 +1,195 @@
+.bitcount { /* from google fonts */
+  font-family: "bitcount", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+@font-face { /* locally hosted, may be unnecessary since its also web-hosted */
+font-family: "bitcount"; 
+src: url("../fonts/Bitcount-VariableFont_CRSV_ELSH_ELXP_slnt_wght.woff") format("woff");
+ }
+
+.custom-cursor-element {
+        cursor: url(../images/Untitled-1.svg) 10 10, auto; /* 10 10 are optional coordinates */
+    }
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* skeletal grid */
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | content | footer */
+  min-height: 100vh; /* full screen height */
+}
+/* Header grid */
+.site-header {
+  display: grid;
+  grid-template-columns: auto 1fr; /* logo | nav */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #000000;
+  font-family: bitcount;
+  font-size: 2rem;
+  color: #ff0000;
+  position: sticky; 
+        top: 0; /* Aligns the header to the very top of the viewport */
+        z-index: 1000; /* Ensures the header stays on top of other content */
+}
+
+/* Navigation */
+.nav {
+  display: flex;             
+  justify-content: flex-end;
+  gap: 3rem;
+  font-size: 1.2rem;
+}
+
+/* style for nav links */
+.nav a {
+    font-family: bitcount;
+    color: #ff0000;
+    text-decoration: none;
+}
+
+/* Main content area */
+.content {
+  padding: 2rem;
+  background-image: url('images/six_background.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Heading styles */
+.headline {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  font-family: bitcount;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 100%; /* for animation */
+    animation: colorShift 10s linear infinite;
+}
+
+/* body of content styling w/ animated gradient text */
+.type {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  font-family: bitcount;
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 100%; /* for animation */
+    animation: colorShift 10s linear infinite;
+}
+
+/* Animation for gradient text */
+@keyframes colorShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+/* Footer styles */
+.site-footer {
+  text-align: center;
+  background: #000000;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-family: bitcount;
+  color: #ff0000;
+  position: sticky;
+        bottom: 0; /* Aligns the footer to the very bottom */
+}
+
+.entries {
+  font-family: bitcount;
+  font-size: 1 rem;
+  color: #ff0000;
+  text-decoration: none;
+  transition: font-size 0.5s;
+}
+
+.entries:hover {
+  color:green;
+  font-size: 20rem;
+}
+
+ @media (max-width: 900px) { /* responsive adjustments to tablet size */
+  .site-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 1rem;
+  }
+
+  .headline h1 {
+    font-size: 1.8rem;
+  }
+
+  .type p {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+@media (max-width: 600px) { /* responsive adjustments to mobile size */
+  .site-header {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+
+  .headline h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .type p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .site-footer {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+}
+}

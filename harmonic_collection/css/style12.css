@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  background-color: #111;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+}
+
+.wheels {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.wheel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  animation: spin 4s linear infinite;
+  transform-origin: center center;
+}
+
+.wheel1 {
+  mix-blend-mode: multiply;
+  animation-duration: 5s;
+}
+
+.wheel2 {
+  mix-blend-mode: screen;
+  animation-duration: 7s;
+}
+
+.wheel3 {
+  mix-blend-mode: color-burn;
+  animation-duration: 10s;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}

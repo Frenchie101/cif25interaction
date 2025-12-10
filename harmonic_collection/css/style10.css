@@ -1,0 +1,227 @@
+.bitcount { /* from google fonts */
+  font-family: "bitcount", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+@font-face { /* locally hosted, may be unnecessary since its also web-hosted */
+font-family: "bitcount"; 
+src: url("../fonts/Bitcount-VariableFont_CRSV_ELSH_ELXP_slnt_wght.woff") format("woff");
+ }
+ 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.page-container {
+    width: 100%;
+}
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | content | footer */
+  min-height: 100vh; /* full screen height */
+}
+
+/* Header grid */
+.site-header {
+  display: grid;
+  grid-template-columns: auto 1fr; /* logo | nav */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #000000;
+  font-family: bitcount;
+  font-size: 2rem;
+  color: #ff0000;
+  position: sticky; 
+        top: 0; /* Aligns the header to the very top of the viewport */
+        z-index: 1000; /* Ensures the header stays on top of other content */
+}
+
+a.logo {
+    font-family: bitcount;
+    color: #ff0000;
+    text-decoration: none;
+}
+
+a.logo:hover {
+    color: green;
+    text-decoration: none;
+}
+
+/* Navigation */
+.nav {
+  display: flex;             
+  justify-content: flex-end;
+  gap: 3rem;
+  font-size: 1.2rem;
+}
+
+/* style for nav links */
+.nav a {
+    font-family: bitcount;
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.entries {
+  font-family: bitcount;
+  font-size: 1 rem;
+  color: #ff0000;
+  text-decoration: none;
+  transition: font-size 0.5s;
+}
+
+.entries:hover {
+  color:green;
+  font-size: 10rem;
+}
+
+/* Make the content area relative for circle positioning */
+.content {
+ background-color: #000000;
+}
+
+/* Circle positions and animations */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  animation: spin linear infinite;
+}
+
+/* Spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Example sizes/colors/speed */
+.circle1  { width:120px; height:120px; background:red;    animation-duration:6s, 20s; animation-name:spin, move1; }
+.circle2  { width:100px; height:100px; background:blue;   animation-duration:5s, 22s; animation-name:spin, move2; }
+.circle3  { width:90px;  height:90px;  background:yellow; animation-duration:7s, 18s; animation-name:spin, move3; }
+.circle4  { width:110px; height:110px; background:green;  animation-duration:4s, 21s; animation-name:spin, move4; }
+.circle5  { width:80px;  height:80px;  background:orange; animation-duration:6.5s, 23s; animation-name:spin, move5; }
+.circle6  { width:130px; height:130px; background:pink;   animation-duration:5.5s, 19s; animation-name:spin, move6; }
+.circle7  { width:95px;  height:95px;  background:purple; animation-duration:6.2s, 20s; animation-name:spin, move7; }
+.circle8  { width:105px; height:105px; background:cyan;   animation-duration:4.8s, 22s; animation-name:spin, move8; }
+.circle9  { width:85px;  height:85px;  background:lime;   animation-duration:5.1s, 18s; animation-name:spin, move9; }
+.circle10 { width:115px; height:115px; background:magenta;animation-duration:6.3s, 21s; animation-name:spin, move10; }
+.circle11 { width:100px; height:100px; background:gold;   animation-duration:5.7s, 19s; animation-name:spin, move11; }
+.circle12 { width:90px;  height:90px;  background:teal;   animation-duration:6.6s, 23s; animation-name:spin, move12; }
+.circle13 { width:120px; height:120px; background:salmon; animation-duration:4.9s, 20s; animation-name:spin, move13; }
+.circle14 { width:80px;  height:80px;  background:violet; animation-duration:5.3s, 22s; animation-name:spin, move14; }
+.circle15 { width:110px; height:110px; background:indigo; animation-duration:6.1s, 19s; animation-name:spin, move15; }
+.circle16 { width:95px;  height:95px;  background:limegreen; animation-duration:5.6s, 21s; animation-name:spin, move16; }
+.circle17 { width:105px; height:105px; background:orangered; animation-duration:6.4s, 23s; animation-name:spin, move17; }
+.circle18 { width:85px;  height:85px;  background:navy;    animation-duration:5.2s, 20s; animation-name:spin, move18; }
+.circle19 { width:115px; height:115px; background:aqua;    animation-duration:6.5s, 22s; animation-name:spin, move19; }
+.circle20 { width:100px; height:100px; background:chartreuse; animation-duration:5.9s, 19s; animation-name:spin, move20; }
+.circle21 { width:90px;  height:90px;  background:coral;   animation-duration:6.0s, 21s; animation-name:spin, move21; }
+.circle22 { width:120px; height:120px; background:turquoise; animation-duration:4.7s, 23s; animation-name:spin, move22; }
+.circle23 { width:80px;  height:80px;  background:plum;    animation-duration:5.4s, 20s; animation-name:spin, move23; }
+.circle24 { width:105px; height:105px; background:lime;    animation-duration:6.2s, 22s; animation-name:spin, move24; }
+
+/* All keyframes now stay within content area (0% = top of .content, 100% = bottom of .content) */
+
+@keyframes move1  {0%{top:0%;left:5%} 25%{top:50%;left:15%} 50%{top:30%;left:60%} 75%{top:60%;left:40%} 100%{top:0%;left:5%}}
+@keyframes move2  {0%{top:10%;left:10%} 25%{top:60%;left:25%} 50%{top:40%;left:70%} 75%{top:70%;left:50%} 100%{top:10%;left:10%}}
+@keyframes move3  {0%{top:5%;left:20%} 25%{top:45%;left:35%} 50%{top:25%;left:60%} 75%{top:55%;left:40%} 100%{top:5%;left:20%}}
+@keyframes move4  {0%{top:15%;left:15%} 25%{top:55%;left:25%} 50%{top:35%;left:55%} 75%{top:65%;left:35%} 100%{top:15%;left:15%}}
+@keyframes move5  {0%{top:20%;left:30%} 25%{top:60%;left:40%} 50%{top:40%;left:75%} 75%{top:70%;left:55%} 100%{top:20%;left:30%}}
+@keyframes move6  {0%{top:10%;left:40%} 25%{top:50%;left:50%} 50%{top:30%;left:80%} 75%{top:60%;left:60%} 100%{top:10%;left:40%}}
+@keyframes move7  {0%{top:5%;left:50%} 25%{top:45%;left:60%} 50%{top:25%;left:85%} 75%{top:55%;left:65%} 100%{top:5%;left:50%}}
+@keyframes move8  {0%{top:15%;left:60%} 25%{top:55%;left:70%} 50%{top:35%;left:90%} 75%{top:65%;left:75%} 100%{top:15%;left:60%}}
+@keyframes move9  {0%{top:20%;left:70%} 25%{top:60%;left:80%} 50%{top:40%;left:95%} 75%{top:70%;left:85%} 100%{top:20%;left:70%}}
+@keyframes move10 {0%{top:0%;left:80%} 25%{top:40%;left:90%} 50%{top:20%;left:100%} 75%{top:60%;left:85%} 100%{top:0%;left:80%}}
+@keyframes move11 {0%{top:10%;left:5%} 25%{top:50%;left:15%} 50%{top:30%;left:60%} 75%{top:60%;left:40%} 100%{top:10%;left:5%}}
+@keyframes move12 {0%{top:5%;left:10%} 25%{top:45%;left:25%} 50%{top:25%;left:70%} 75%{top:55%;left:50%} 100%{top:5%;left:10%}}
+@keyframes move13 {0%{top:15%;left:15%} 25%{top:55%;left:30%} 50%{top:35%;left:65%} 75%{top:65%;left:45%} 100%{top:15%;left:15%}}
+@keyframes move14 {0%{top:10%;left:20%} 25%{top:50%;left:35%} 50%{top:30%;left:60%} 75%{top:60%;left:40%} 100%{top:10%;left:20%}}
+@keyframes move15 {0%{top:5%;left:25%} 25%{top:45%;left:40%} 50%{top:25%;left:65%} 75%{top:55%;left:45%} 100%{top:5%;left:25%}}
+@keyframes move16 {0%{top:15%;left:30%} 25%{top:55%;left:45%} 50%{top:35%;left:70%} 75%{top:65%;left:50%} 100%{top:15%;left:30%}}
+@keyframes move17 {0%{top:10%;left:35%} 25%{top:50%;left:50%} 50%{top:30%;left:75%} 75%{top:60%;left:55%} 100%{top:10%;left:35%}}
+@keyframes move18 {0%{top:5%;left:40%} 25%{top:45%;left:55%} 50%{top:25%;left:80%} 75%{top:55%;left:60%} 100%{top:5%;left:40%}}
+@keyframes move19 {0%{top:15%;left:45%} 25%{top:55%;left:60%} 50%{top:35%;left:85%} 75%{top:65%;left:65%} 100%{top:15%;left:45%}}
+@keyframes move20 {0%{top:10%;left:50%} 25%{top:50%;left:65%} 50%{top:30%;left:90%} 75%{top:60%;left:70%} 100%{top:10%;left:50%}}
+@keyframes move21 {0%{top:5%;left:55%} 25%{top:45%;left:70%} 50%{top:25%;left:95%} 75%{top:55%;left:75%} 100%{top:5%;left:55%}}
+@keyframes move22 {0%{top:15%;left:60%} 25%{top:55%;left:75%} 50%{top:35%;left:100%} 75%{top:65%;left:80%} 100%{top:15%;left:60%}}
+@keyframes move23 {0%{top:10%;left:65%} 25%{top:50%;left:80%} 50%{top:30%;left:95%} 75%{top:60%;left:85%} 100%{top:10%;left:65%}}
+@keyframes move24 {0%{top:5%;left:70%} 25%{top:45%;left:85%} 50%{top:25%;left:100%} 75%{top:55%;left:90%} 100%{top:5%;left:70%}}
+
+/* Footer styles */
+.site-footer {
+  text-align: center;
+  background: #000000;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-family: bitcount;
+  color: #ff0000;
+  position: sticky;
+        bottom: 0; /* Aligns the footer to the very bottom */
+}
+
+ @media (max-width: 900px) { /* responsive adjustments to tablet size */
+  .site-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 1rem;
+  }
+
+  .headline h1 {
+    font-size: 1.8rem;
+  }
+
+  .type p {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+@media (max-width: 600px) { /* responsive adjustments to mobile size */
+  .site-header {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+
+  .headline h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .type p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .site-footer {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+}
+}

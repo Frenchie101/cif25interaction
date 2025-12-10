@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style4.css">
+    <title>Entry 4</title>
+    <link rel="icon" type="image/svg+xml" href="../images/website_favicon.svg">
+</head>
+<body>
+  <div class="page-container">
+    <header class="site-header">
+      <a class="logo" href="../homepage.html">Entry Four</a>
+      <nav class="nav">
+        <a class="entries" href="../pages/one_index.html">1</a>
+        <a class="entries" href="../pages/two_index.html">2</a>
+        <a class="entries" href="../pages/index3.html">3</a>
+        <a class="entries" href="../pages/index4.html">4</a>
+        <a class="entries" href="../pages/five_index.html">5</a>
+        <a class="entries" href="../pages/index6.html">6</a>
+        <a class="entries" href="../pages/index7.html">7</a>
+        <a class="entries" href="../pages/index8.html">8</a>
+        <a class="entries" href="../pages/index9.html">9</a>
+        <a class="entries" href="../pages/index10.html">10</a>
+        <a class="entries" href="../pages/index11.html">11</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <h1>Cone Cell Explorer</h1>
+      <p>Toggle the cone types to explore how your eyes construct color.</p>
+      <div class="controls">
+  <button id="L" class="active">L Cones (Red)</button>
+  <button id="M" class="active">M Cones (Green)</button>
+  <button id="S" class="active">S Cones (Blue)</button>
+</div>
+<input type="range" min="0" max="360" value="200" class="slider" id="hueSlider">
+<p>Wavelength Simulation (Hue): <span id="hueValue">200°</span></p>
+<div id="colorBox"></div>
+<div class="explanation">
+  <p><span class="L">L Cones</span> detect long wavelengths (reds + yellows).</p>
+  <p><span class="M">M Cones</span> detect medium wavelengths (greens).</p>
+  <p><span class="S">S Cones</span> detect short wavelengths (blues + violets).</p>
+  <p>Colorblindness occurs when one or more cone types are missing or weakened.</p>
+</div>
+  </main>
+
+    <footer class="site-footer">
+      <p>Aidan French | Core 1: Interaction | Parsons School of Design 2025</p>
+    </footer>
+  <script src="../pages/script/script4.js"></script>
+</body>
+</html>
